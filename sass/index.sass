@@ -1,0 +1,145 @@
+@font-face
+  font-family: 'Outfit'
+  src: url('../fonts/outfit.ttf')
+
+@mixin flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+$soft-blue: hsl(215, 51%, 70%)
+$cyan: hsl(178, 100%, 50%)
+
+$main_bg: hsl(217, 54%, 11%)
+$card_bg: hsl(216, 50%, 16%)
+$line_color: hsl(215, 32%, 27%)
+$white: hsl(0, 0%, 100%)
+
+$image-width: 260px
+
+@mixin main-image-properties
+  border-radius: .4em
+  position: absolute
+  width: $image-width
+  height: $image-width
+
+body
+  font-family: Outfit, sans-serif
+  @include flex-center
+  background-color: $main_bg
+  height: 100vh
+  overflow: hidden
+
+.card
+  display: flex
+  flex-direction: column
+  padding: 1.5em
+  border-radius: .5em
+  background-color: $card_bg
+  height: fit-content
+  width: $image-width
+  font-size: 14px
+
+  .image-container
+    height: $image-width
+    width: $image-width
+    cursor: pointer
+
+    .image
+      @include main-image-properties
+
+    .image-overlay
+      @include main-image-properties
+
+      img
+        display: none
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+
+      &:hover
+        background-color: transparentize($cyan, .5)
+
+        img
+          display: block
+
+  .title
+    font-weight: 600
+    padding: 1em 0 0 0
+    font-size: 18px
+    color: $white
+    cursor: pointer
+
+    &:hover
+      color: $cyan
+
+    &:active
+      color: $cyan
+
+  .description
+    font-weight: 300
+    color: $soft-blue
+
+  .purchase-container
+    display: flex
+    justify-content: space-between
+    padding-top: .5em
+
+    .price-block
+      @include flex-center
+
+      img
+        margin-right: .25em
+
+      .price
+        color: $cyan
+        font-weight: 300
+
+    .time-block
+      @include flex-center
+
+      img
+        margin-right: .25em
+
+      .time
+        color: $soft-blue
+        font-weight: 300
+
+  .line
+    margin: 1em 0
+    height: 1px
+    background-color: $line-color
+
+  .author-block
+    display: flex
+    align-items: center
+
+    img
+      margin-right: 1em
+      width: 24px
+
+    .author
+      color: $soft-blue
+      font-weight: 300
+
+      .name
+        color: $white
+        cursor: pointer
+
+        &:hover
+          color: $cyan
+
+        &:active
+          color: $cyan
+
+.attribution
+  position: fixed
+  bottom: 10px
+  font-size: 11px
+  text-align: center
+  color: $white
+  font-weight: 300
+
+  a
+    color: $cyan

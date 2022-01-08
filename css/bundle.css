@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/outfit.ttf");
+}
+body {
+  font-family: Outfit, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d192b;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  background-color: #14253d;
+  height: fit-content;
+  width: 260px;
+  font-size: 14px;
+}
+.card .image-container {
+  height: 260px;
+  width: 260px;
+  cursor: pointer;
+}
+.card .image-container .image {
+  border-radius: 0.4em;
+  position: absolute;
+  width: 260px;
+  height: 260px;
+}
+.card .image-container .image-overlay {
+  border-radius: 0.4em;
+  position: absolute;
+  width: 260px;
+  height: 260px;
+}
+.card .image-container .image-overlay img {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.card .image-container .image-overlay:hover {
+  background-color: rgba(0, 255, 247, 0.5);
+}
+.card .image-container .image-overlay:hover img {
+  display: block;
+}
+.card .title {
+  font-weight: 600;
+  padding: 1em 0 0 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+.card .title:hover {
+  color: #00fff7;
+}
+.card .title:active {
+  color: #00fff7;
+}
+.card .description {
+  font-weight: 300;
+  color: #8bacda;
+}
+.card .purchase-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
+}
+.card .purchase-container .price-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .purchase-container .price-block img {
+  margin-right: 0.25em;
+}
+.card .purchase-container .price-block .price {
+  color: #00fff7;
+  font-weight: 300;
+}
+.card .purchase-container .time-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .purchase-container .time-block img {
+  margin-right: 0.25em;
+}
+.card .purchase-container .time-block .time {
+  color: #8bacda;
+  font-weight: 300;
+}
+.card .line {
+  margin: 1em 0;
+  height: 1px;
+  background-color: #2f415b;
+}
+.card .author-block {
+  display: flex;
+  align-items: center;
+}
+.card .author-block img {
+  margin-right: 1em;
+  width: 24px;
+}
+.card .author-block .author {
+  color: #8bacda;
+  font-weight: 300;
+}
+.card .author-block .author .name {
+  color: white;
+  cursor: pointer;
+}
+.card .author-block .author .name:hover {
+  color: #00fff7;
+}
+.card .author-block .author .name:active {
+  color: #00fff7;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 10px;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+}
+.attribution a {
+  color: #00fff7;
+}
+
+/*# sourceMappingURL=bundle.css.map */
